@@ -10,7 +10,7 @@ pipeline {
     gitEmail = 'rhcowls@naver.com'
     gitWebaddress = 'https://github.com/Thymho/sb_code.git'
     gitSshaddress = 'git@github.com:Thymho/sb_code.git'
-    gitCredential = 'git_cre' // github credential 생성시의 ID
+    gitCredential = 'git_cre'
   }
   
   stages {
