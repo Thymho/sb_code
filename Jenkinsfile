@@ -12,7 +12,8 @@ pipeline {
       gitWebaddress = 'https://github.com/Thymho/sb_code.git'
       // github의 ssh 주소
       gitSshaddress = 'git@github.com:Thymho/sb_code.git'
-      gitCredential = 'rhcowls' // github credential 생성시의 ID
+      gitCredential = 'git_cre' // github credential 생성시의 ID
+      dockerHubRegistry = 'rhcowls/sbimage'
     }
     
     stages {
