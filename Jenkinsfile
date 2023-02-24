@@ -60,5 +60,18 @@ pipeline {
           }
         }
       }
+      stage('Docker image push') {
+        steps {
+          sh "docker push ${dockerHubRegistry}:${currentBuild.number}"
+        }
+        post {
+          failure {
+            echo 'docker image push failure'
+          }
+          success {
+            echo 'docker image push success'
+          }
+        }
+      }
     }
 }
