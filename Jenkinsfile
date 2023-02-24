@@ -31,7 +31,7 @@ pipeline {
     }
      stage('maven Build') {
       steps {
-        sh 'mvm clean install'
+        sh 'mvn clean install'
       }
        post {
 	failure {
