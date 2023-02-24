@@ -8,7 +8,9 @@ pipeline {
   environment {
     gitName = 'Thymho'
     gitEmail = 'rhcowls@naver.com'
-    gitWebaddress=''
+    gitWebaddress = 'https://github.com/Thymho/sb_code.git'
+    gitSshaddress = 'git@github.com:Thymho/sb_code.git'
+    gitCredential = 'git_cre'
   }
   
   stages {
