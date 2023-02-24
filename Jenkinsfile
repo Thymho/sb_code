@@ -62,7 +62,7 @@ pipeline {
       }
       stage('Docker image push') {
         steps {
-          sh "sudo docker push ${dockerHubRegistry}:${currentBuild.number}"
+          sh "docker push ${dockerHubRegistry}:${currentBuild.number}"
         }
         post {
           failure {
