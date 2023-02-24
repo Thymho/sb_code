@@ -4,6 +4,13 @@ pipeline {
   tools {
     maven 'my_maven'
   }
+  
+  environment {
+    gitName = 'Thymho'
+    gitEmail = 'rhcowls@naver.com'
+    gitWebaddress=''
+  }
+  
   stages {
     stage('Example') {
       steps {
