@@ -12,8 +12,9 @@ pipeline {
       gitWebaddress = 'https://github.com/Thymho/sb_code.git'
       // github의 ssh 주소
       gitSshaddress = 'git@github.com:Thymho/sb_code.git'
-      gitCredential = 'rhcowls' // github credential 생성시의 ID
+      gitCredential = 'git_cre' // github credential 생성시의 ID
       dockerHubRegistry = 'rhcowls/sbimage'
+      dockerHubRegistryCredential = 'docker_cre'
     }
     
     stages {
@@ -45,6 +46,8 @@ pipeline {
       }
       stage('Docker image Build') {
         steps {
+          // withDockerRegistry : docker pipeline 플러그인 설치시 사용가능.
+          // dockerHubRegistryCredential : environment에서 선언한 docker_cre
           sh "docker image build -t ${dockerHubRegistry}:${currentBuild.number} ."
           sh "docker image build -t ${dockerHubRegistry}:latest ."
         }
