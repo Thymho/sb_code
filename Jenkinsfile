@@ -62,7 +62,12 @@ pipeline {
       }
       stage('Docker image push') {
         steps {
-          sh "docker push ${dockerHubRegistry}:${currentBuild.number}"
+          withDockerRegistry(credentialsId: dockerHubRegistryCredential, url: '') {
+            // withDockerRegistry : docker pipeline 플러그인 설치시 사용가능.
+            // dockerHubRegistryCredential : environment에서 선언한 docker_cre  
+            sh "docker push ${dockerHubRegistry}:${currentBuild.number}"
+            sh "docker push ${dockerHubRegistry}:latest"
+          }
         }
         post {
           failure {
