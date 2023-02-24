@@ -86,10 +86,10 @@ pipeline {
         }
         post {
           failure {
-            echo 'docker image push failure'
+            echo 'docker container deployment failure'
           }
           success {
-            echo 'docker image push success'
+            echo 'docker container deployment success'
           }
         }
       }
