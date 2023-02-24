@@ -42,19 +42,19 @@ pipeline {
       }
     }
   }
-  stage('Docker image Build') {
-    steps {
-      sh "docker image build -t ${dockerHubRegistry}:${currentBuild.number} ."
-      sh "docker image build -t ${dockerHubRegistry}:latest ."
-    }
-    post {
-      failure {
-        echo 'docker image build failure'
-      }
-      success {
-	echo 'docker image build success'
-      }
-    }
-  }
-}
+//   stage('Docker image Build') {
+//     steps {
+//       sh "docker image build -t ${dockerHubRegistry}:${currentBuild.number} ."
+//       sh "docker image build -t ${dockerHubRegistry}:latest ."
+//     }
+//     post {
+//       failure {
+//         echo 'docker image build failure'
+//       }
+//       success {
+// 	echo 'docker image build success'
+//       }
+//     }
+//   }
+// }
 }
