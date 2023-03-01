@@ -28,4 +28,4 @@ spec:
     spec:
       containers:
         - name: spring
-          image: rhcowls/sbimage:3
+          image: rhcowls/sbimage:1
